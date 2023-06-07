@@ -30,7 +30,7 @@ RUN CGO_ENABLED=0 make cadence-cassandra-tool cadence-sql-tool cadence cadence-s
 
 
 # Download dockerize
-FROM alpine:3.15 AS dockerize
+FROM alpine:3 AS dockerize
 
 RUN apk add --no-cache openssl
 
@@ -43,7 +43,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 
 # Alpine base image
-FROM alpine:3.15 AS alpine
+FROM alpine:3 AS alpine
 
 RUN apk add --update --no-cache ca-certificates tzdata bash curl
 
